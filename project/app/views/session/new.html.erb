@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">BMSTU tube
+    <a class="navbar-brand" href="../main/index">BMSTU tube
       <img src="/assets/draft.png" style="width:64px;">
     </a>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -11,7 +11,7 @@
   </div>
 </nav>
 
-<%= form_with url: session_create_url, method: :post, local:true do |f| %>
+<%= form_for(:session, url: session_create_url, method: :post, local:true) do |f| %>
 <main role="main" class="flex-shrink-0" >
   <div class="container">
     <div class="row">

@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
+# helper for auth
 module SessionHelper
   def sign_in(user)
-    cookies.signed[:user_id] = { value: user.id, expires: 10.days }
+    # cookies.signed[:user_id] = { value: user.id, expires: 10.days }
+    session[:current_user_id] = user.id
     self.current_user = user
   end
 
@@ -9,7 +13,7 @@ module SessionHelper
   end
 
   def sign_out
-    cookies.signed[:user_id] = nil
+    session[:current_user_id] = nil
     self.current_user = nil
   end
 
