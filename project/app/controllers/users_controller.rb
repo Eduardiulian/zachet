@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @_current = User.find_by_id(session[:current_user_id])
-    redirect_to main_index_path if @_current
+    # @_current = User.find_by_id(session[:current_user_id])
+    # redirect_to main_index_path if @_current
     @user = User.new
   end
 

@@ -12,7 +12,10 @@
                 <img src='/assets/tube2.png' class='inline' style="width: 70px">
                 <div class = 'inline'>
                     <div class="navbar-right-links">
-                      <a class="nav-link inline profile_box" style="color: #212121; font-size:24px" href="../main/profile">My tube</a>
+                      <div class="inline">
+<!--                        <a class="nav-link block profile_box" style="color: #212121; font-size:24px" href="../main/profile">My tube</a>-->
+                        <a class="nav-link block profile_box" style="color: #212121; font-size:24px" href="../main/profile"><%= user.username %></a>
+                      </div>
                       <a class="nav-link inline profile_box" href="../logout">log out</a>
                     </div>
                 </div>
