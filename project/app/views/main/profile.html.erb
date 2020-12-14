@@ -1,26 +1,26 @@
 <%= render 'navbar', user: @user %>
 <div class="profile_page">
-  <h2 class='title inline' colspan='2' style='margin-top: 20px;'>My profile</h2>
+  <h2 class='title inline' colspan='2' style='margin-top: 20px;'><%= t("lables.profile") %></h2>
   <table>
     <tbody>
     <tr>
-      <td><strong>Username:</strong></td>
+      <td><strong><%= t("fields.username") %></strong></td>
       <td> <%= @user.username %> </td>
     </tr>
     <tr>
-      <td><strong>Email:</strong></td>
+      <td><strong><%= t("fields.email") %></strong></td>
       <td> <%= @user.email %> </td>
     </tr>
     <tr>
-      <td><strong>Link to contact:</strong></td>
+      <td><strong><%= t("fields.link") %></strong></td>
       <td> <%= @user.link %> </td>
     </tr>
     <tr>
-      <td><strong>Headline:</strong></td>
+      <td><strong><%= t("fields.headline") %></strong></td>
       <td> <%= @user.headline %> </td>
     </tr>
     <tr>
-      <td><strong>Description:</strong></td>
+      <td><strong><%= t("fields.description") %></strong></td>
       <td> <%= @user.tube_description %> </td>
     </tr>
     </tbody>
@@ -28,7 +28,7 @@
 
   <hr>
   <div style="margin-top: 16px;">
-    <a href= "../main/profile_edit" class="block" style="margin-bottom: 16px"> <button type="button" class="btn btn-outline-secondary">Edit</button></a>
-    <%= link_to 'Back', root_url %>
+    <a href= "../main/profile_edit" class="block" style="margin-bottom: 16px"> <button type="button" class="btn btn-outline-secondary"><%= t("buttons.edit") %></button></a>
+    <%= link_to t("links.back"), root_url %>
   </div>
 </div>

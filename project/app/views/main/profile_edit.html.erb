@@ -2,60 +2,60 @@
 
 <%= form_with url: main_edit_url, method: :post, local:true do |form| %>
   <div class="profile_page">
-        <h2 class='title inline' colspan='2' style='margin-top: 20px;'>Edit your advertisement</h2>
+        <h2 class='title inline' colspan='2' style='margin-top: 20px;'><%= t("lables.profile_edit") %></h2>
         <table>
           <tbody>
           <tr>
-            <td><%= form.label :username %></td>
+            <td><%= t("fields.username") %></td>
             <td>
               <%= form.text_field :username %>
             </td>
           </tr>
           <tr>
-            <td><%= form.label :email %></td>
+            <td><%= t("fields.email") %></td>
             <td>
               <%= form.text_field :email %>
             </td>
           </tr>
           <tr>
-            <td><%= form.label :link %></td>
+            <td><%= t("fields.link") %></td>
             <td>
               <%= form.text_field :link %>
             </td>
           </tr>
           <tr>
-            <td><%= form.label :headline %></td>
+            <td><%= t("fields.headline") %></td>
             <td>
               <%= form.text_field :headline %>
             </td>
           </tr>
           <tr>
-            <td><%= form.label :tube_description %></td>
+            <td><%= t("fields.description") %></td>
             <td>
               <%= form.text_area :tube_description, :cols => "21  ", :rows => "5" %>
             </td>
           </tr>
           <tr>
-            <td><%= form.label :password %></td>
+            <td><%= t("fields.password") %></td>
             <td>
               <%= form.password_field :password %>
             </td>
           </tr>
           <tr>
-            <td><%= form.label :password_confirmation %></td>
+            <td><%= t("fields.password_confirmation") %></td>
             <td>
               <%= form.password_field :password_confirmation %>
             </td>
           </tr>
           <tr>
             <td colspan="2">
-              <%= form.submit %>
+              <%= form.submit t("buttons.save") %>
             </td>
           </tr>
           </tbody>
         </table>
         <div style="margin-top: 16px;">
-          <%= link_to 'back', main_profile_url %>
+          <%= link_to t("links.back"), main_profile_url %>
         </div>
   </div>
 
