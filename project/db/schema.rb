@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_14_015459) do
+ActiveRecord::Schema.define(version: 2020_12_14_140432) do
 
   create_table "users", force: :cascade do |t|
+    t.text "username"
+    t.text "password_digest"
+    t.text "email"
+    t.text "headline"
+    t.text "tube_description"
+    t.text "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

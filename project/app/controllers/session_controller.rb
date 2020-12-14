@@ -1,8 +1,10 @@
 class SessionController < ApplicationController
-
   def new; end
 
   def login; end
+
+  # def destroy;
+  # end
 
   def create
     user = User.find_by username: params[:username]
@@ -15,12 +17,12 @@ class SessionController < ApplicationController
     else
       p 'redirect'
       #flash.now[:danger] = 'Неверный логин или пароль'
-      redirect_to session_login_url
+      redirect_to session_new_url
     end
   end
 
   def logout
     sign_out
-    redirect_to session_login_url
+    redirect_to session_new_url
   end
 end

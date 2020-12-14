@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">BMSTU tube
+        <a class="navbar-brand" href="/">BMSTU tube
             <img src="/assets/draft.png" style="width:64px;">
         </a>
         <div class="collapse navbar-collapse" id="navbarText">
@@ -12,9 +12,15 @@
                 <img src='/assets/tube2.png' class='inline' style="width: 70px">
                 <div class = 'inline'>
                     <div class="navbar-right-links">
-                        <a class="nav-link inline profile_box" style="color: #212121; font-size:24px" href="#">My tube</a>
+                      <a class="nav-link inline profile_box" style="color: #212121; font-size:24px" href="../main/profile">My tube</a>
+                      <a class="nav-link inline profile_box" href="../logout">log out</a>
                     </div>
                 </div>
+            </div>
+          <% else %>
+            <div class ='ml-auto'>
+              <a href="../signin"><button type="button" class="btn btn-outline-secondary"  >Вход</button></a>
+              <a href="../signup"> <button type="button" class="btn btn-outline-secondary">Регистрация</button></a>
             </div>
           <% end %>
         </div>

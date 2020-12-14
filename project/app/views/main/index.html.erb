@@ -1,23 +1,21 @@
 <%= render 'navbar', user: @user %>
 
-
 <% @users.each do |ad| %>
   <% if !@current || @current.id != ad.id %>
-    <div class="col-9 ">
-      <div class="row question-box">
-        <div class="col-3 a">
-          <%# if ad.avatar.file.nil?%>
-<!--            <img src="/assets/def_avatar.jpg" class="question-img"alt="Аватар">-->
-          <%# else %>
-            <%#= image_tag ad.avatar.url, :class => "question-img", :alt => "Аватар"%>
-          <%# end %>
+        <div class="card" style='margin-top: 20px; margin-left: 32px; margin-right: 64px'>
+          <div class="card-body row">
+            <div class="col-3">
+              <img src='/assets/draft.png' style="width: 80px;">
+              <div class='likes block' style='margin-top: 10px'>
+                <img src='/assets/user.png' class='inline' style="width: 20px">
+                <h6 class='inline'><%= ad.username %></h6>
+              </div>
+            </div>
+            <div class="col-9">
+              <a class="card-title text-dark" href="../profile/<%= ad.id %>" style="font-size: 32px"><%= ad.headline %></a>
+              <p class="card-text" style="font-size: 24px"><%= ad.tube_description %></p>
+            </div>
+          </div>
         </div>
-        <div class="col-9 a">
-          <div class="question-title a"><a class="text-dark" href="../profile/<%= ad.id %>"><%= ad.headline %>  </a></div>
-          <span class="question-text a" ><%= ad.username %> </span>
-          <br/><br>
-        </div>
-      </div>
-    </div>
   <% end %>
 <%end %>

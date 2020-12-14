@@ -11,6 +11,7 @@
   </div>
 </nav>
 
+<%= form_with url: session_create_url, method: :post, local:true do |f| %>
 <main role="main" class="flex-shrink-0" >
   <div class="container">
     <div class="row">
@@ -21,18 +22,18 @@
           <tr>
             <td>Login</td>
             <td>
-              <input type='text' maxlength="50" class='inline text_edit'/>
+              <%= f.text_field :username, required: true, label: 'username' %>
             </td>
           </tr>
           <tr>
             <td>Password</td>
             <td>
-              <input type='password' maxlength="30" class='inline text_edit'/>
+              <%= f.password_field :password, required: true, label: 'password' %>
             </td>
           </tr>
           <tr>
             <td colspan="2">
-              <input class='add-answer-button' type="submit" value="Log in!" />
+              <%= f.submit 'log in' %>
             </td>
           </tr>
           </tbody>
@@ -48,3 +49,4 @@
     </div>
   </div>
 </main>
+<% end %>
