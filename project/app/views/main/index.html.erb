@@ -1,0 +1,23 @@
+<%= render 'navbar', user: @user %>
+
+
+<% @users.each do |ad| %>
+  <% if !@current || @current.id != ad.id %>
+    <div class="col-9 ">
+      <div class="row question-box">
+        <div class="col-3 a">
+          <%# if ad.avatar.file.nil?%>
+<!--            <img src="/assets/def_avatar.jpg" class="question-img"alt="Аватар">-->
+          <%# else %>
+            <%#= image_tag ad.avatar.url, :class => "question-img", :alt => "Аватар"%>
+          <%# end %>
+        </div>
+        <div class="col-9 a">
+          <div class="question-title a"><a class="text-dark" href="../profile/<%= ad.id %>"><%= ad.headline %>  </a></div>
+          <span class="question-text a" ><%= ad.username %> </span>
+          <br/><br>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<%end %>

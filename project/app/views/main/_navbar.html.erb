@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">BMSTU tube
+            <img src="/assets/draft.png" style="width:64px;">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarText">
+      <span class="form-inline mt-2 mt-md-0 ml-auto mr-auto" style="color: #212121; font-size:20px">
+        Give your tube a new life
+      </span>
+          <% if @user %>
+            <div class ='ml-auto'>
+                <img src='/assets/tube2.png' class='inline' style="width: 70px">
+                <div class = 'inline'>
+                    <div class="navbar-right-links">
+                        <a class="nav-link inline profile_box" style="color: #212121; font-size:24px" href="#">My tube</a>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</nav>
