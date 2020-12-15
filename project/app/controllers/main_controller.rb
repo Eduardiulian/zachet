@@ -7,15 +7,6 @@ class MainController < ApplicationController
   end
 
   def profile
-      # id = params[:id].to_i
-      # if id.to_s =~ /\A[0-9]+\Z/
-      #   if (@user = User.find_by_id(id))
-      #   else
-      #     render :error
-      #   end
-      # else
-      #   render :error
-      # end
   end
 
   def set_user
