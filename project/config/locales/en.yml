@@ -37,6 +37,8 @@ en:
     signup: 'Add an advertisement'
     profile: 'Your advertisement'
     profile_edit: 'Change your advertisement'
+    link: 'Link to contact: '
+    email: 'Email: '
 
   fields:
     username: 'Username'
@@ -53,6 +55,7 @@ en:
     logout: 'Logout'
     edit: 'Edit'
     save: 'Save'
+    show: 'Show more'
 
   links:
     back: 'Back'

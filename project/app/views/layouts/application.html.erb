@@ -7,8 +7,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'contacts', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap' %>
+
+    <script>
+        function show(username)
+        {
+            document.getElementById(username.id).style.visibility = "visible";
+        }
+    </script>
 
     <style>
         body{

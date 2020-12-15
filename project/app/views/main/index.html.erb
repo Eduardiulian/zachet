@@ -9,15 +9,32 @@
               <div class='likes block' style='margin-top: 10px'>
                 <img src='/assets/user.png' class='inline' style="width: 20px">
                 <h6 class='inline'><%= ad.username %></h6>
-                <div id="contacts">
-                  <!-- поле для асинхронного вывода контактов -->
-                </div>
               </div>
             </div>
-            <div class="col-9">
+
+            <div class="col-5">
               <a class="card-title text-dark" href="../profile/<%= ad.id %>" style="font-size: 32px"><%= ad.headline %></a>
               <p class="card-text" style="font-size: 24px"><%= ad.tube_description %></p>
             </div>
+
+            <div class="col-4">
+              <input class='add' type="submit" value="<%= t("buttons.show") %>" onclick='show(<%=ad.username%>)' />
+              <div id="<%=ad.username%>" style="visibility: hidden; float: right;">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><%= t("lables.link") %></td>
+                    <td><%= ad.link %></td>
+                  </tr>
+                  <tr>
+                    <td><%= t("lables.email") %></td>
+                    <td><%= ad.email %></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
           </div>
         </div>
   <% end %>
