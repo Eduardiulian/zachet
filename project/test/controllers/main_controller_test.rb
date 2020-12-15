@@ -6,9 +6,13 @@ class MainControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get profile" do
+  test "should redirect from profile without auth" do
     get main_profile_url
-    assert_response :success
+    assert_redirected_to session_new_url
   end
 
+  test 'should redirect from profile edit without auth' do
+    get main_profile_edit_url
+    assert_redirected_to session_new_url
+  end
 end

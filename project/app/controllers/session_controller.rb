@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+  before_action :already_logged, only: %i[login create new]
   def new; end
 
   def login; end
@@ -24,5 +25,9 @@ class SessionController < ApplicationController
   def logout
     sign_out
     redirect_to session_new_url
+  end
+
+  def already_logged
+    redirect_to main_index_url if signed_in?
   end
 end

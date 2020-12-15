@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :already_logged, only: %i[new create]
+
 
   # GET /users/1
   # GET /users/1.json
@@ -45,5 +47,9 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:username, :headline, :tube_description, :link, :email, :password, :password_confirmation)
+    end
+
+    def already_logged
+      redirect_to main_index_url if signed_in?
     end
 end

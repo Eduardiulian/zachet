@@ -1,5 +1,6 @@
 class MainController < ApplicationController
   before_action :set_user, only: %i[index profile edit profile_edit]
+  before_action :require_login, only: %i[profile edit profile_edit]
 
   def index
     @users = User.all
@@ -43,4 +44,7 @@ class MainController < ApplicationController
     params.permit(:username, :headline, :tube_description, :link, :email, :password, :password_confirmation)
   end
 
+  def require_login
+    redirect_to session_new_url unless signed_in?
+  end
 end
