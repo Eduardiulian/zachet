@@ -7,20 +7,33 @@ class UserTest < ActiveSupport::TestCase
     user.delete
   end
 
-  # test 'check adding not unique value' do
-  #   first = User.new(email: 'test@mail.ru', password: '1111', username: 'test' )
-  #   first.save
-  #   second = User.new(email: 'test@mail.ru', password: '1111', username: 'test' )
-  #   second.validate
-  #   assert_equal second.errors[:input], ['has already been taken']
-  # end
-  # test 'test_unique_email' do
-  #   instanse1 = User.new(email: 'test@mail.ru', password: '123456', first_name: 'Милохин', last_name: 'Олег')
-  #   instanse1.save
-  #   instance2 = User.new(email: 'test@mail.ru', password: '222222', first_name: 'Олегин', last_name: 'Милох')
-  #   instance2.validate
-  #   assert_equal instance2.errors[:email], ['уже существует']
-  # end
+  test 'check adding not unique email' do
+    first = User.create email: 'test@mail.ru', password: '1111', username: 'test1'
+    first.save
+    second = User.create email: 'test@mail.ru', password: '1111', username: 'test2'
+    second.validate
+    assert_equal second.errors[:email], ['has already been taken']
+  end
+
+  test 'check adding not unique username' do
+    first = User.create email: 'test1@mail.ru', password: '1111', username: 'test'
+    first.save
+    second = User.create email: 'test2@mail.ru', password: '1111', username: 'test'
+    second.validate
+    assert_equal second.errors[:username], ['has already been taken']
+  end
+
+  test 'username cant be empty' do
+    instance = User.new(email: "test1@mail.ru", password: '1111' )
+    instance.validate
+    assert_equal instance.errors[:username], ["can't be blank"]
+  end
+
+  test 'email cant be empty' do
+    instance = User.new(username: "test", password: '1111' )
+    instance.validate
+    assert_equal instance.errors[:email], ["can't be blank"]
+  end
 
   test 'should get added data from db' do
     user = User.new(email: 'evgeniy@mail.ru', password: '1111', username: 'Евгений', headline: 'My tube' )
