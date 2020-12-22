@@ -1,23 +1,17 @@
+# frozen_string_literal: true
+
+# Controller for users
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :already_logged, only: %i[new create]
 
+  def show; end
 
-  # GET /users/1
-  # GET /users/1.json
-  def show
-  end
-
-  # GET /users/new
   def new
-    # @_current = User.find_by_id(session[:current_user_id])
-    # redirect_to main_index_path if @_current
     @user = User.new
   end
 
-  # GET /users/1/edit
-  def edit
-  end
+  def edit; end
 
   def create
     @user = User.new(user_params)
@@ -32,15 +26,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def update; end
 
-  end
-
-  def destroy
-
-  end
+  def destroy; end
 
   private
+
     def set_user
       @user = User.find(params[:id])
     end

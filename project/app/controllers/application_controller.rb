@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
+# Application controller
 class ApplicationController < ActionController::Base
   include SessionHelper
   before_action :set_locale
 
   def current_user
     @_current_user ||= session[:current_user_id] &&
-      User.find_by_id(session[:current_user_id])
+                       User.find_by_id(session[:current_user_id])
   end
 
   private

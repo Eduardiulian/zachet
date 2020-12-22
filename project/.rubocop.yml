@@ -1,0 +1,14 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+Metrics/LineLength:
+  Max: 150
+
+Metrics/AbcSize:
+  Max: 20
+
+Layout/IndentationConsistency:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false

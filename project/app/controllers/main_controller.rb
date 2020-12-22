@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller for logic
 class MainController < ApplicationController
   before_action :set_user, only: %i[index profile edit profile_edit]
   before_action :require_login, only: %i[profile edit profile_edit]
@@ -6,20 +9,16 @@ class MainController < ApplicationController
     @users = User.all
   end
 
-  def profile
-  end
+  def profile; end
 
   def set_user
     @user = User.find_by_id(session[:current_user_id])
   end
 
-  # GET /users/1/edit
-  def profile_edit
-  end
+  def profile_edit; end
 
   def edit
     if !request.get?
-      # current_user
       if @user.update(user_params)
         redirect_to main_profile_path
       else
